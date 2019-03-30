@@ -1,0 +1,781 @@
+<html>
+<head>
+	<title>Главная / PIX</title>
+
+	<meta name="title" content="Главная / PIX">
+	<meta name="description" content="Хостинг файлов.">
+
+	<link rel="icon" type="image/png" href="./app/image/favicon.png" />
+
+	<link href="./app/main.css" rel="stylesheet">
+	<script src="./app/plugin/jquery-3.3.1.js"></script>
+	<script src="./app/main.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="navigation">
+			<div class="navigation-buttons">
+				<!--<div class="navigation-button-apps navigation-button" data-menu-ref="apps"></div>-->
+				<div class="navigation-button-upload navigation-button" onclick="hash_set('upload')"></div>
+				<div class="navigation-button-notifications navigation-button" data-menu-ref="notifications" data-value="0"></div>
+				<div class="navigation-button-user navigation-button" data-menu-ref="user">
+					<div class="user-avatar block-canvas"><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+				</div>
+				<!--<button class="button primary create" onclick="hash_set('login')"><span class="button-text">Войти</span></button>-->
+			</div>
+			<div class="navigation-menus">
+				<!--
+				<div class="navigation-menu" data-menu="apps">
+					<div class="navigation-apps">
+						<button class="navigation-app-main navigation-app button" onclick="hash_set('')"><div class="button-icon"></div></button>
+						<button class="navigation-app-media navigation-app button" onclick="hash_set('media')"><div class="button-icon"></div></button>
+					</div>
+				</div>
+				-->
+				<div class="navigation-menu" data-menu="notifications">
+					<ul>
+						<li class="block-content block-subtitle">Уведомления</li>
+						<li class="navigation-notification block-content block-group-v">
+							<div class="user">
+								<div class="user-avatar block-canvas"><img src="./app/image/avatar.svg"></div>
+								<a href="#user/user_login">user_login</a>
+								<div class="user-text">15 минут назад</div>
+								<a class="navigation-notification-link colored" href="#file/rWNunfOQRzs">Перейти</a>
+							</div>
+							<div>Оставлен ответ на Ваш комментарий под файлом <span class="block-label">Example File</span>: "Тестовый ответ на комментарий".</div>
+						</li>
+						<li class="navigation-notification block-content block-group-v">
+							<div class="user">
+								<div class="user-avatar block-canvas"><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+								<a href="#user/i_am_dies">DIES</a>
+								<div class="user-text">5 дней назад</div>
+								<a class="navigation-notification-link colored" href="#file/rWNunfOQRzs">Перейти</a>
+							</div>
+							<div>Загружен файл <span class="block-label">Example File</span>.</div>
+						</li>
+					</ul>
+					<div class="block-loading"><div></div><div></div><div></div></div>
+				</div>
+				<div class="navigation-menu" data-menu="user">
+					<div class="block-content block-group-h block-spaced">
+						<div class="block-title">DIES</div>
+						<a class="colored" href="#user/i_am_dies">Мой профиль</a>
+					</div>
+					<div class="block-content block-group-h block-spaced">
+						<button class="button" onclick="hash_set('login')"><span class="button-text">Сменить аккаунт</span></button>
+						<button class="button" onclick=""><span class="button-text">Выйти</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="search">
+				<div class="search-logo" onclick="hash_set('')"></div>
+				<div class="search-content">
+					<div class="search-bar element-group-h">
+						<input class="search-query input-text" type="text">
+						<button class="search-button button primary" onclick="hash_set('search/'+$('.search-query').val())"><div class="button-icon"></div></button>
+					</div>
+					<div class="search-tabs element-group-h block-spaced">
+						<ul class="block-tabs">
+							<li>Все</li>
+							<li>Изображения</li>
+							<li>Видео</li>
+							<li>Аудио</li>
+							<li>Архивы</li>
+							<li>Остальное</li>
+						</ul>
+						<button class="button" data-toggle-ref="search-tools"><div class="button-text">Инструменты</div></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div data-page="search" data-page-title="Поиск">
+				<div class="block block-toggle element-group-h" data-toggle="search-tools">
+					<div class="select">
+						<button class="select-button">
+							<div class="select-text"></div>
+							<div class="select-icon"></div>
+						</button>
+						<ul class="select-list">
+							<li>Искать по всему</li>
+							<li>Искать по названию</li>
+							<li>Искать по описанию</li>
+							<li>Искать по имени</li>
+							<li>Искать по хэшу MD5</li>
+						</ul>
+					</div>
+					<div class="select">
+						<button class="select-button">
+							<div class="select-text"></div>
+							<div class="select-icon"></div>
+						</button>
+						<ul class="select-list">
+							<li>Сортировать по популярности</li>
+							<li>Сортировать по дате</li>
+							<li>Сортировать по размеру</li>
+						</ul>
+					</div>
+					<button class="sort-button button" style="margin-left: auto;"><div class="button-icon"></div></button>
+				</div>
+				<div class="block block-toggle" data-toggle="search-message">
+					<div class="block-content">По вашему запросу ничего не найдено.</div>
+				</div>
+				<ul class="results">
+					<li class="block">
+						<div class="block-content block-group-h">
+							<div class="result-info block-group-v">
+								<a class="colored" href="#file/rWNunfOQRzs">Example File</a>
+								<div>27794903d0aeefd1a2e145c5eb7afd3d • 645,704</div>
+								<div class="user">
+									<div class="user-avatar block-canvas"><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+									<a href="#user/i_am_dies">DIES</a>
+									<div class="user-text">5 дней назад • 1024 просмотра • 2 комментария</div>
+								</div>
+							</div>
+							<a class="result-image block-canvas" href="#file/rWNunfOQRzs"><img src="./file/rWNunfOQRzs/example.jpg"></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div data-page="file" data-page-title="Example File - Файл">
+				<div class="block">
+					<div class="block-title">Example File</div>
+					<div class="player image">
+						<video class="player-video" src="./file/TsgQdzzXEnY/big-buck-bunny-1080p-30s.mp4"></video>
+						<div class="player-image block-canvas"><img src="./file/rWNunfOQRzs/example.jpg"></div>
+						<div class="player-message player-ui" onclick="$(this).removeClass('visible')"></div>
+						<ul class="player-debug player-ui">
+							<li class="block-group-h"><div>Источник</div><div class="player-debug-source">...</div></li>
+							<li class="block-group-h"><div>Буфер</div><div class="player-debug-buffer">...</div></li>
+							<li class="block-group-h"><div>Время</div><div class="player-debug-time">...</div></li>
+							<li class="block-group-h"><div>Громкость</div><div class="player-debug-volume">...</div></li>
+							<li class="block-group-h"><div>Последнее событие</div><div class="player-debug-event">...</div></li>
+						</ul>
+						<div class="player-loading block-loading"><div></div><div></div><div></div></div>
+						<div class="player-control">
+							<div class="player-tab video">
+								<div class="player-timeline player-progress">
+									<div class="player-progress-buffer"></div>
+									<div class="player-progress-current"></div>
+								</div>
+								<div class="player-buttons block-group-h block-spaced">
+									<div class="block-group-h">
+										<button class="player-button-play player-button button" data-value="0" data-title="Воспроизведение"><div class="button-icon"></div></button>
+										<button class="player-button-volume player-button button" data-value="3" data-title="Громкость"><div class="button-icon"></div></button>
+										<div class="player-volume player-progress"><div class="player-progress-current"></div></div>
+										<div class="player-time"></div>
+									</div>
+									<div class="block-group-h">
+										<button class="player-button-settings player-button button" data-menu-ref="settings" data-title="Настройки"><div class="button-icon" data-badge="HD"></div></button>
+										<button class="player-button-expand player-button button" data-value="0" data-title="Развернуть"><div class="button-icon"></div></button>
+									</div>
+								</div>
+								<div class="player-menus">
+									<ul class="player-menu player-ui" data-menu="settings">
+										<li class="disabled">Автоповтор</li>
+										<ul class="player-select horizontal">
+											<li class="current">Нет</li>
+											<li>Да</li>
+										</ul>
+										<li class="disabled">Скорость</li>
+										<ul class="player-select horizontal">
+											<li>0.5</li>
+											<li class="current">1</li>
+											<li>1.5</li>
+											<li>2</li>
+										</ul>
+										<li class="block-group-h block-spaced"><div>Качество</div><div>720</div></li>
+									</ul>
+								</div>
+							</div>
+							<div class="player-tab image">
+								<div class="player-buttons element-group-h block-spaced">
+									<div></div>
+									<div class="block-group-h">
+										<button class="player-button-rotate player-button button" data-value="0" data-title="Повернуть влево"><div class="button-icon"></div></button>
+										<button class="player-button-rotate player-button button" data-value="1" data-title="Повернуть вправо"><div class="button-icon"></div></button>
+									</div>
+									<div></div>
+								</div>
+							</div>
+						</div>
+						<ul class="player-context player-select player-ui">
+							<li onclick="$('.player-debug').toggleClass('visible')">Данные для отладки</li>
+							<li onclick="$('.player').toggleClass('video image')">Переключить</li>
+							<li class="disabled">Плеер PIX</li>
+						</ul>
+					</div>
+					<div class="block-content element-group-h block-spaced">
+						<div class="user">
+							<div class="user-avatar block-canvas"><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+							<a href="#user/i_am_dies">DIES</a>
+							<div class="user-text">5 дней назад</div>
+						</div>
+						<div class="block-group-h">
+							<a class="file-download" href="./file/rWNunfOQRzs/example.jpg" download>
+								<button class="button small"><div class="button-text">Скачать</div></button>
+							</a>
+							<ul class="file-tabs block-tabs">
+								<li data-tab-ref="file-about">О файле</li>
+								<li data-tab-ref="file-share">Поделиться</li>
+								<li data-tab-ref="file-control">Управление</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<div class="block-tab block-content block-group-v" data-tab="file-about">
+							<div class="block-group-h block-spaced">
+								<div class="block-subtitle">1024 просмотра</div>
+								<div class="block-group-h">
+									<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="128">👍&#xfe0e;</div></button>
+									<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="32">👎&#xfe0e;</div></button>
+								</div>
+							</div>
+							<div>Нет описания.</div>
+							<div class="block-divider"></div>
+							<div class="block-group-v">
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Имя</div>
+									<div>example.jpg</div>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">MD5</div>
+									<div>27794903d0aeefd1a2e145c5eb7afd3d</div>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Размер</div>
+									<div>645,704</div>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Разрешение</div>
+									<div>3840x2160</div>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Глубина цвета</div>
+									<div>24</div>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Цветовое пространство</div>
+									<div>sRGB</div>
+								</div>
+							</div>
+						</div>
+						<div class="block-tab block-content block-group-v" data-tab="file-share">
+							<div class="block-label">Ссылка на страницу просмотра</div>
+							<div class="element-group-h">
+								<input class="input-text" type="text" value="pix.ru/#file/rWNunfOQRzs" readonly="readonly">
+								<button class="button" onclick="text_copy()"><div class="button-text">Копировать</div></button>
+							</div>
+							<div class="block-label">Прямая ссылка на файл</div>
+							<div class="element-group-h">
+								<input class="input-text" type="text" value="pix.ru/file/rWNunfOQRzs/example.jpg" readonly="readonly">
+								<button class="button" onclick="text_copy()"><div class="button-text">Копировать</div></button>
+							</div>
+						</div>
+						<div class="block-tab" data-tab="file-control">
+							<div class="block-content block-group-v">
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Название</div>
+									<div id="file-control-title">12/128</div>
+								</div>
+								<input class="input-text" type="text" oninput="$('#file-control-title').text($(this).val().length+'/'+$(this).attr('maxlength'))" placeholder="example.jpg" maxlength="128" value="Example File">
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Описание</div>
+									<div id="file-control-description">0/4096</div>
+								</div>
+								<textarea class="input-text area" oninput="$('#file-control-description').text($(this).val().length+'/'+$(this).attr('maxlength'))" placeholder="Нет описания." maxlength="4096"></textarea>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Содержит материал для взрослых</div>
+									<label class="switch"><input type="checkbox" value="0"><div></div></label>
+								</div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Комментарии</div>
+									<div class="select">
+										<button class="select-button">
+											<div class="select-text"></div>
+											<div class="select-icon"></div>
+										</button>
+										<ul class="select-list">
+											<li>Включены</li>
+											<li>Только чтение</li>
+											<li>Выключены</li>
+										</ul>
+									</div>
+								</div>
+								<div class="block-divider"></div>
+								<div class="block-group-h block-spaced">
+									<div class="block-label">Действия</div>
+									<div class="block-group-h">
+										<button class="settings-save button" onclick=""><div class="button-icon"></div><div class="button-text">Сохранить</div></button>
+										<button class="file-delete button" onclick="modal_open('Вы действительно хотите удалить этот файл? Ссылки перестанут работать, а комментарии невозможно будет восстановить.')"><div class="button-icon"></div><div class="button-text">Удалить</div></button>
+									</div>
+								</div>
+							</div>
+							<div class="block-progress visible"></div>
+						</div>
+					</div>
+				</div>
+				<div class="block">
+					<div class="block-content block-group-h block-spaced">
+						<div class="block-subtitle">2 комментария</div>
+						<div class="select small">
+							<button class="select-button">
+								<div class="select-text"></div>
+								<div class="select-icon"></div>
+							</button>
+							<ul class="select-list">
+								<li>По популярности</li>
+								<li>По дате</li>
+							</ul>
+						</div>
+					</div>
+					<div class="comment-write element-group-v">
+						<textarea class="comment-field input-text area" placeholder="Введите текст комментария"></textarea>
+						<div class="comment-tools block-content block-group-h block-spaced">
+							<div class="block-group-h">
+								<div class="element-group-h">
+									<button class="button" onclick="comment_codeAdd(this, 'bold')"><div class="button-text"><b>B</b></div></button>
+									<button class="button" onclick="comment_codeAdd(this, 'italic')"><div class="button-text"><i>I</i></button>
+									<button class="button" onclick="comment_codeAdd(this, 'underscore')"><div class="button-text"><u>U</u></div></button>
+									<button class="button" onclick="comment_codeAdd(this, 'strikethrough')"><div class="button-text"><s>S</s></div></button>
+								</div>
+								<div class="element-group-h">
+									<button class="button" onclick="comment_codeAdd(this, 'url')"><div class="button-text">Ссылка</div></button>
+									<button class="button" onclick="comment_codeAdd(this, 'url-entitled')"><div class="button-text">С названием</div></button>
+								</div>
+							</div>
+							<button class="button primary" onclick="comment_send(this)"><div class="button-text">Отправить</div></button>
+						</div>
+						<div class="block-progress"></div>
+					</div>
+					<ul class="comments block-content block-group-v">
+						<li>
+							<div class="comment-content block-group-v">
+								<div class="user">
+									<div class="user-avatar block-canvas"><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+									<a class="comment-owner" href="#user/i_am_dies">DIES</a>
+									<div class="user-text">30 минут назад</div>
+									<div class="comment-actions select small dropdown">
+										<button class="select-button"><div class="select-icon"></div></button>
+										<ul class="select-list">
+											<li>Редактировать</li>
+											<li onclick="modal_open('Вы действительно хотите удалить этот комментарий? Все имеющиеся дочерние комментарии также удаляться.')">Удалить</li>
+										</ul>
+									</div>
+								</div>
+								<div>Тестовый комментарий.</div>
+								<div class="block-group-h">
+									<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="0">👍&#xfe0e;</div></button>
+									<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="0">👎&#xfe0e;</div></button>
+									<button class="button small" onclick="comment_reply('i_am_dies')"><div class="button-text">Ответить</div></button>
+								</div>
+							</div>
+							<ul class="comment-replies block-group-v">
+								<li>
+									<div class="comment-content block-group-v">
+										<div class="user">
+											<div class="user-avatar block-canvas"><img src="./app/image/avatar.svg"></div>
+											<a href="#user/user_login">user_login</a>
+											<div class="user-text">15 минут назад</div>
+											<div class="comment-actions select small dropdown">
+												<button class="select-button"><div class="select-icon"></div></button>
+												<ul class="select-list">
+													<li onclick="modal_open('Вы действительно хотите удалить этот комментарий? Все имеющиеся дочерние комментарии также удаляться.')">Удалить</li>
+												</ul>
+											</div>
+										</div>
+										<div>Тестовый ответ на комментарий.</div>
+										<div class="block-group-h">
+											<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="0">👍&#xfe0e;</div></button>
+											<button class="button small" onclick="comment_rate(this)"><div class="button-text" data-badge="0">👎&#xfe0e;</div></button>
+											<button class="button small" onclick="comment_reply('user_login')"><div class="button-text">Ответить</div></button>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div data-page="login" data-page-title="Вход">
+				<div class="columns">
+					<div class="column big">
+						<div class="block">
+							<div class="login-promo block-canvas"><img src="./app/image/promo.svg"></div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="block">
+							<ul class="block-tabs">
+								<li data-tab-ref="login-signin">Вход</li>
+								<li data-tab-ref="login-signup">Регистрация</li>
+							</ul>
+						</div>
+						<div class="block">
+							<div class="block-tab" data-tab="login-signin">
+								<div class="block-content block-group-v">
+									<div class="user"><div class="login-avatar user-avatar block-canvas"><img src="./app/image/avatar.svg"></div></div>
+									<input class="input-text" type="text" placeholder="Логин или почта">
+									<button class="button primary" onclick=""><div class="button-text">Войти</div></button>
+								</div>
+							</div>
+							<div class="block-tab" data-tab="login-signup">
+								<div class="block-content block-group-v">
+									<div class="block-label">Логин</div>
+									<input class="input-text" type="text">
+									<div class="block-label">Почта</div>
+									<input class="input-text" type="text">
+									<div class="block-label">Пароль</div>
+									<div class="element-group-v">
+										<input class="input-text" type="password" placeholder="Введите первый раз">
+										<input class="input-text" type="password" placeholder="Введите второй раз">
+									</div>
+									<div>Создавая аккаунт, Вы соглашаетесь с <a class="colored" href="#about">правилами</a>.</div>
+									<button class="button primary" onclick=""><div class="button-text">Зарегистрироваться</div></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="user" data-page-title="DIES - Пользователь">
+				<div class="user big block">
+					<div class="user-background block-canvas" onclick=""><img src="./file/rWNunfOQRzs/example.jpg"></div>
+					<div class="user-avatar block-canvas" onclick=""><img src="./file/x3NCwPCTMXk/LG logo (2015) - DIES Avatar.png"></div>
+					<div class="block-content block-group-h block-spaced">
+						<div class="user-name block-title">DIES</div>
+						<button class="button primary" onclick="" disabled><div class="button-text">Подписаться</div></button>
+					</div>
+					<ul class="block-tabs">
+						<li data-tab-ref="user-files">Файлы</li>
+						<li data-tab-ref="user-comments">Комментарии</li>
+						<li data-tab-ref="user-subsribers">Подписчики</li>
+						<li data-tab-ref="user-about">О пользователе</li>
+						<li data-tab-ref="user-personal" style="margin-left: auto;">Личное</li>
+					</ul>
+				</div>
+				<div>
+					<div class="block-tab" data-tab="user-files">
+						<ul>
+							<li class="block">
+								<div class="block-content block-group-h">
+									<div class="result-info block-group-v">
+										<a class="colored" href="#file/rWNunfOQRzs">Example File</a>
+										<div>27794903d0aeefd1a2e145c5eb7afd3d • 645,704</div>
+										<div class="user"><div class="user-text">5 дней назад • 1024 просмотра • 2 комментария</div></div>
+									</div>
+									<a class="result-image block-canvas" href="#file/rWNunfOQRzs"><img src="./file/rWNunfOQRzs/example.jpg"></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="block-tab" data-tab="user-comments">
+						<ul>
+							<li class="block">
+								<div class="block-content block-group-v">
+									<a class="colored" href="#file/rWNunfOQRzs">Example File</a>
+									<div>Тестовый комментарий.</div>
+									<div class="user"><div class="user-text">30 минут назад • 1 ответ</div></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="block-tab" data-tab="user-subsribers">
+						<ul class="block">
+							<li class="block-content">
+								<div class="user">
+									<div class="user-avatar block-canvas"><img src="./app/image/avatar.svg"></div>
+									<a href="#user/user_login">user_login</a>
+									<div class="user-text">2 дня назад</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="block-tab" data-tab="user-about">
+						<div class="block">
+							<div class="block-content block-subtitle block-group-h">
+								<div>1 файл</div><div>•</div>
+								<div>1 комментарий</div><div>•</div>
+								<div>1 подписчик</div>
+							</div>
+							<div class="block-content">Информация о себе не указана.</div>
+						</div>
+						<div class="block">
+							<div class="block-content block-group-h block-spaced">
+								<div class="block-subtitle">Нет комментариев</div>
+								<div class="select small">
+									<button class="select-button">
+										<div class="select-text"></div>
+										<div class="select-icon"></div>
+									</button>
+									<ul class="select-list">
+										<li>По популярности</li>
+										<li>По дате</li>
+									</ul>
+								</div>
+							</div>
+							<div class="comment-write element-group-v">
+								<textarea class="comment-field input-text area" placeholder="Введите текст комментария"></textarea>
+								<div class="comment-tools block-content block-group-h block-spaced">
+									<div class="block-group-h">
+										<div class="element-group-h">
+											<button class="button" onclick="comment_codeAdd(this, 'bold')"><div class="button-text"><b>B</b></div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'italic')"><div class="button-text"><i>I</i></button>
+											<button class="button" onclick="comment_codeAdd(this, 'underscore')"><div class="button-text"><u>U</u></div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'strikethrough')"><div class="button-text"><s>S</s></div></button>
+										</div>
+										<div class="element-group-h">
+											<button class="button" onclick="comment_codeAdd(this, 'url')"><div class="button-text">Ссылка</div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'url-entitled')"><div class="button-text">С названием</div></button>
+										</div>
+									</div>
+									<button class="button primary" onclick="comment_send(this)"><div class="button-text">Отправить</div></button>
+								</div>
+								<div class="block-progress"></div>
+							</div>
+						</div>
+					</div>
+					<div class="block-tab" data-tab="user-personal">
+						<div class="columns">
+							<div class="column small">
+								<div class="block">
+									<ul class="block-tabs vertical">
+										<li data-tab-ref="user-subscribes">Подписки</li>
+										<li data-tab-ref="user-settings">Настройки</li>
+									</ul>
+								</div>
+							</div>
+							<div class="column">
+								<div class="block-tab" data-tab="user-subscribes">
+									<ul class="block">
+										<li class="block-content block-group-h block-spaced">
+											<div class="user">
+												<div class="user-avatar block-canvas"><img src="./app/image/avatar.svg"></div>
+												<a href="#user/user_login">user_login</a>
+												<div class="user-text">2 дня назад</div>
+											</div>
+											<button class="button" onclick=""><div class="button-text" data-badge="1">Отписаться</div></button>
+										</li>
+									</ul>
+								</div>
+								<div class="block-tab" data-tab="user-settings">
+									<div class="block">
+										<div class="block-title">Профиль</div>
+										<div class="block-content block-group-v">
+											<div class="block-label">Отображаемое имя</div>
+											<input class="input-text" type="text" placeholder="i_am_dies" value="DIES">
+											<div class="block-label">О себе</div>
+											<textarea class="input-text area" placeholder="Информация о себе не указана."></textarea>
+											<div class="block-group-h block-spaced">
+												<div class="block-label">Комментарии</div>
+												<div class="select">
+													<button class="select-button">
+														<div class="select-text"></div>
+														<div class="select-icon"></div>
+													</button>
+													<ul class="select-list">
+														<li>Включены</li>
+														<li>Только чтение</li>
+														<li>Выключены</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="block">
+										<div class="block-title">Уведомления</div>
+										<div class="block-content block-group-v">
+											<div class="block-group-h block-spaced">
+												<div class="block-label">Комментарии и ответы</div>
+												<label class="switch"><input type="checkbox" value="1"><div></div></label>
+											</div>
+											<div class="block-group-h block-spaced">
+												<div class="block-label">Подписки</div>
+												<label class="switch"><input type="checkbox" value="1"><div></div></label>
+											</div>
+										</div>
+									</div>
+									<div class="block">
+										<div class="block-title">Безопасность</div>
+										<div class="block-content block-group-v">
+											<div class="block-label">Пароль</div>
+											<div class="element-group-v">
+												<input class="input-text" type="password" placeholder="Введите первый раз">
+												<input class="input-text" type="password" placeholder="Введите второй раз">
+											</div>
+										</div>
+									</div>
+									<div class="block">
+										<div class="block-content block-group-h block-spaced">
+											<div class="block-label">Сохранить</div>
+											<button class="settings-save button" onclick=""><div class="button-icon"></div></button>
+										</div>
+										<div class="block-progress visible"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="upload" data-page-title="Загрузка файлов">
+				<div class="block">
+					<div class="block-canvas">
+						<div class="block-group-v">
+							<img src="./app/image/cloud.svg">
+							<button class="button primary" onclick=""><div class="button-text">Выберите файлы для загрузки</div></button>
+							<div class="block-label center">...или перетащите сюда</div>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<div class="block-content block-group-h block-spaced">
+								<div class="block-label">example.png</div>
+								<div class="block-group-h">
+									<div>5мб/с • 25%</div>
+									<button class="button" onclick="hash_set('file/')" disabled><div class="button-text">Перейти</div></button>
+								</div>
+							</div>
+							<div class="block-progress visible"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="block">
+					<div class="block-content">Загружая файлы вы автоматически соглашаетесь с <a class="colored" href="#about">правилами</a>.</div>
+				</div>
+			</div>
+			<div data-page="about" data-page-title="О сервисе">
+				<div class="block">
+					<ul class="block-tabs">
+						<li data-tab-ref="about-main">Главная</li>
+						<li data-tab-ref="about-help">Помощь</li>
+						<li data-tab-ref="about-rules">Правила</li>
+						<li data-tab-ref="about-feedback" style="margin-left: auto;">Обратная связь</li>
+					</ul>
+				</div>
+				<div>
+					<div class="block-tab" data-tab="about-main">
+						<div class="block">
+							<div class="block-title">Предназначение</div>
+							<div class="block-content block-group-v">
+								<div>Передача и хранение файлов в облачном пространстве.</div>
+								<div>Функционал включает в себя подробный просмотр отдельно взятых или всех загруженных файлов и информации о них через поиск, возможность делиться ими с помощью ссылок и комментировать.</div>
+							</div>
+						</div>
+						<div class="block">
+							<div class="block-title">Технологии</div>
+							<div class="block-content">Помимо основных (CSS3, HTML5), используются jQuery 3.3.1, AJAX, PHP 7.2 и Apache.</div>
+						</div>
+					</div>
+					<div class="block-tab" data-tab="about-help">
+						<div class="block">
+							<div class="block-title">Поиск</div>
+							<div class="block-content block-group-v">
+								<div>Поисковая строка обладает переключателем, отвечающим за восприятие запроса системой.</div>
+								<div>
+									Название - поиск по имени файла, включая расширение.<br>
+									Хэш MD5 - поиск по контрольной сумме MD5.
+								</div>
+								<div>Послав запрос с пустым полем, выведется последняя часть ленты загруженных файлов. Прокрутка вниз будет постепенно выводить все более старые загрузки.</div>
+							</div>
+						</div>
+						<div class="block">
+							<div class="block-title">Регистрация</div>
+							<div class="block-content block-group-v">
+								<div>Открывает доступ к добавлению информации на ресурс.</div>
+							</div>
+						</div>
+						<div class="block">
+							<div class="block-title">Уведомления</div>
+							<div class="block-content block-group-v"></div>
+						</div>
+						<div class="block">
+							<div class="block-title">Файлы</div>
+							<div class="block-content block-group-v">
+								<div>На главной странице, под строкой поиска и на всех страницах, в правом нижнем углу, есть кнопки "Загрузить".</div>
+								<div>После нажатия на любую из них появится окно с рамкой.</div>
+							</div>
+						</div>
+						<div class="block">
+							<div class="block-title">Комментарии</div>
+							<div class="block-content block-group-v"></div>
+						</div>
+					</div>
+					<div class="block-tab" data-tab="about-rules">
+						<div class="block">
+							<div class="block-content block-group-v">
+								<div class="block-subtitle">1. Файлы</div>
+								<div>1.1. Размер одного файла не может превышать 52,428,800 байт.</div>
+								<div>1.2. Название и описание должно отражать реальное содержание.</div>
+								<div>1.3. Материал не предназначенный для лиц младше 18 лет требуется помечать соответствующим переключателем.</div>
+								<div class="block-subtitle">2. Комментарии</div>
+								<div>2.1. Спам (реклама, ссылки на сомнительные сторонние ресурсы) и флуд (многочисленные сообщения, не несущие смысловой нагрузки) запрещены.</div>
+								<div class="block-subtitle">3. Ответственность</div>
+								<div>3.1. Файлы или комментарии с обнаруженными нарушениями будут отредактированы либо удалены без предупреждения.</div>
+								<div class="block-divider"></div>
+								<div>Администрация сервиса оставляет за собой право в любой момент изменять вышеперечисленные пункты.</div>
+							</div>
+						</div>
+					</div>
+					<div class="block-tab" data-tab="about-feedback">
+						<div class="block">
+							<div class="block-content block-group-h block-spaced">
+								<div class="block-subtitle">Нет комментариев</div>
+								<div class="select small">
+									<button class="select-button">
+										<div class="select-text"></div>
+										<div class="select-icon"></div>
+									</button>
+									<ul class="select-list">
+										<li>По популярности</li>
+										<li>По дате</li>
+									</ul>
+								</div>
+							</div>
+							<div class="comment-write element-group-v">
+								<textarea class="comment-field input-text area" placeholder="Введите текст комментария"></textarea>
+								<div class="comment-tools block-content block-group-h block-spaced">
+									<div class="block-group-h">
+										<div class="element-group-h">
+											<button class="button" onclick="comment_codeAdd(this, 'bold')"><div class="button-text"><b>B</b></div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'italic')"><div class="button-text"><i>I</i></button>
+											<button class="button" onclick="comment_codeAdd(this, 'underscore')"><div class="button-text"><u>U</u></div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'strikethrough')"><div class="button-text"><s>S</s></div></button>
+										</div>
+										<div class="element-group-h">
+											<button class="button" onclick="comment_codeAdd(this, 'url')"><div class="button-text">Ссылка</div></button>
+											<button class="button" onclick="comment_codeAdd(this, 'url-entitled')"><div class="button-text">С названием</div></button>
+										</div>
+									</div>
+									<button class="button primary" onclick="comment_send(this)"><div class="button-text">Отправить</div></button>
+								</div>
+								<div class="block-progress"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="loading" data-page-title="...">
+				<div class="block-loading visible"><div></div><div></div><div></div></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-links block-content block-group-h">
+				<!--<a class="footer-link" onclick="modal_open('Материал на этой странице может быть неприемлем для лиц недостигших совершеннолетия.')">Модальное окно</a>-->
+				<a class="footer-link" href="#about">О сервисе</a>
+			</div>
+		</div>
+	</div>
+	<div class="dialog">
+		<div class="dialog-window block">
+			<div class="dialog-title block-title">Предупреждение</div>
+			<div class="dialog-text block-content"></div>
+			<div class="dialog-buttons block-content block-group-h">
+				<button class="dialog-button button" onclick="modal_close()"><div class="button-text">Продолжить</div></button>
+				<button class="dialog-button button" onclick="modal_close()"><div class="button-text">Вернуться</div></button>
+			</div>
+		</div>
+	</div>
+</body>
