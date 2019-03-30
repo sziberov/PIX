@@ -461,7 +461,7 @@ body.modal .wrapper {
 .select-icon {
 	width: 32px;
 	height: 32px;
-	background: url(image/select.svg);
+	background: url(/app/image/select.svg);
 	opacity: 1;
 	transition: opacity 250ms ease, transform 500ms ease;
 }
@@ -713,19 +713,19 @@ body.modal .wrapper {
 }
 
 .navigation-button-apps {
-	background: url(image/user.svg) no-repeat;
+	background: url(/app/image/user.svg) no-repeat;
 }
 
 .navigation-button-upload {
-	background: url(image/user.svg) no-repeat 0 -16px;
+	background: url(/app/image/user.svg) no-repeat 0 -16px;
 }
 
 .navigation-button-notifications[data-value="0"] {
-	background: url(image/user.svg) no-repeat 0 -32px;
+	background: url(/app/image/user.svg) no-repeat 0 -32px;
 }
 
 .navigation-button-notifications[data-value="1"] {
-	background: url(image/user.svg) no-repeat -16px -32px;
+	background: url(/app/image/user.svg) no-repeat -16px -32px;
 }
 
 .navigation-button-user {
@@ -781,11 +781,11 @@ body.modal .wrapper {
 }
 
 .navigation-app-main .button-icon {
-	background: url(image/apps.svg) no-repeat;
+	background: url(/app/image/apps.svg) no-repeat;
 }
 
 .navigation-app-media .button-icon {
-	background: url(image/apps.svg) no-repeat -64px 0;
+	background: url(/app/image/apps.svg) no-repeat -64px 0;
 }
 
 .navigation-notification-link {
@@ -839,7 +839,7 @@ body.modal .wrapper {
 	left: 50%;
 	width: 172px;
 	height: 64px;
-	background: url(image/logo.svg);
+	background: url(/app/image/logo.svg);
 	transform: translate(-50%, -100%);
 }
 
@@ -871,7 +871,7 @@ body.modal .wrapper {
 }
 
 .search-button .button-icon {
-	background: url(image/search.svg);
+	background: url(/app/image/search.svg);
 }
 
 .search:not(.extended) .search-tabs {
@@ -918,7 +918,7 @@ body.modal .wrapper {
 }
 
 .sort-button .button-icon {
-	background: url(image/sort.svg);
+	background: url(/app/image/sort.svg);
 }
 
 .result-info > * {
@@ -937,7 +937,7 @@ body.modal .wrapper {
 }
 
 .result-image img {
-	background: url(image/checkers.svg);
+	background: url(/app/image/checkers.svg);
 }
 
 .player {
@@ -983,7 +983,7 @@ body.modal .wrapper {
 .player-image img {
 	max-width: 768px;
 	max-height: 432px;
-	background: url(image/checkers.svg);
+	background: url(/app/image/checkers.svg);
 }
 
 .player:not(.video) .player-video,
@@ -993,7 +993,7 @@ body.modal .wrapper {
 
 .player-video.error,
 .player-image.error {
-	background: url(image/nosignal.svg) no-repeat;
+	background: url(/app/image/nosignal.svg) no-repeat;
 	background-color: #bfbfbf;
 	background-position: center;
 }
@@ -1253,51 +1253,51 @@ body.modal .wrapper {
 }
 
 .player-button-play[data-value="0"] .button-icon {
-	background: url(image/player.svg) no-repeat;
+	background: url(/app/image/player.svg) no-repeat;
 }
 
 .player-button-play[data-value="1"] .button-icon {
-	background: url(image/player.svg) no-repeat -16px 0;
+	background: url(/app/image/player.svg) no-repeat -16px 0;
 }
 
 .player-button-play[data-value="2"] .button-icon {
-	background: url(image/player.svg) no-repeat -32px 0;
+	background: url(/app/image/player.svg) no-repeat -32px 0;
 }
 
 .player-button-volume[data-value="0"] .button-icon {
-	background: url(image/player.svg) no-repeat 0 -16px;
+	background: url(/app/image/player.svg) no-repeat 0 -16px;
 }
 
 .player-button-volume[data-value="1"] .button-icon {
-	background: url(image/player.svg) no-repeat -16px -16px;
+	background: url(/app/image/player.svg) no-repeat -16px -16px;
 }
 
 .player-button-volume[data-value="2"] .button-icon {
-	background: url(image/player.svg) no-repeat -32px -16px;
+	background: url(/app/image/player.svg) no-repeat -32px -16px;
 }
 
 .player-button-volume[data-value="3"] .button-icon {
-	background: url(image/player.svg) no-repeat -48px -16px;
+	background: url(/app/image/player.svg) no-repeat -48px -16px;
 }
 
 .player-button-settings .button-icon {
-	background: url(image/player.svg) no-repeat 0 -32px;
+	background: url(/app/image/player.svg) no-repeat 0 -32px;
 }
 
 .player-button-expand[data-value="0"] .button-icon {
-	background: url(image/player.svg) no-repeat 0 -48px;
+	background: url(/app/image/player.svg) no-repeat 0 -48px;
 }
 
 .player-button-expand[data-value="1"] .button-icon {
-	background: url(image/player.svg) no-repeat -16px -48px;
+	background: url(/app/image/player.svg) no-repeat -16px -48px;
 }
 
 .player-button-rotate[data-value="0"] .button-icon {
-	background: url(image/player.svg) no-repeat 0 -64px;
+	background: url(/app/image/player.svg) no-repeat 0 -64px;
 }
 
 .player-button-rotate[data-value="1"] .button-icon {
-	background: url(image/player.svg) no-repeat -16px -64px;
+	background: url(/app/image/player.svg) no-repeat -16px -64px;
 }
 
 .player-volume {
@@ -1344,7 +1344,7 @@ body.modal .wrapper {
 }
 
 .file-delete .button-icon {
-	background: url(image/delete.svg);
+	background: url(/app/image/delete.svg);
 }
 
 .comment-write {
@@ -1416,7 +1416,7 @@ body.modal .wrapper {
 }
 
 .settings-save .button-icon {
-	background: url(image/save.svg);
+	background: url(/app/image/save.svg);
 }
 
 .login-promo {
